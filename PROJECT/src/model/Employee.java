@@ -1,5 +1,6 @@
-package model;
 
+
+package model;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,12 @@ public class Employee extends User {
     private double bonus;
     private int overtimeHours;
     private List<Payroll> payrollHistory;
+
+    // Default constructor for Gson and JavaBeans
+    public Employee() {
+        super();
+        this.payrollHistory = new ArrayList<>();
+    }
 
     public Employee(String id, String password, String name, String email,
                     String position, double baseSalary, double pfPercent, double taxPercent,
@@ -30,19 +37,25 @@ public class Employee extends User {
 
     // Getters and setters
     public String getPosition() { return position; }
-    public double getBaseSalary() { return baseSalary; }
-    public double getPfPercent() { return pfPercent; }
-    public double getTaxPercent() { return taxPercent; }
-    public double getBonus() { return bonus; }
-    public int getOvertimeHours() { return overtimeHours; }
-    public List<Payroll> getPayrollHistory() { return payrollHistory; }
-
     public void setPosition(String position) { this.position = position; }
+
+    public double getBaseSalary() { return baseSalary; }
     public void setBaseSalary(double baseSalary) { this.baseSalary = baseSalary; }
+
+    public double getPfPercent() { return pfPercent; }
     public void setPfPercent(double pfPercent) { this.pfPercent = pfPercent; }
+
+    public double getTaxPercent() { return taxPercent; }
     public void setTaxPercent(double taxPercent) { this.taxPercent = taxPercent; }
+
+    public double getBonus() { return bonus; }
     public void setBonus(double bonus) { this.bonus = bonus; }
+
+    public int getOvertimeHours() { return overtimeHours; }
     public void setOvertimeHours(int overtimeHours) { this.overtimeHours = overtimeHours; }
+
+    public List<Payroll> getPayrollHistory() { return payrollHistory; }
+    public void setPayrollHistory(List<Payroll> payrollHistory) { this.payrollHistory = payrollHistory; }
 
     public void addPayroll(Payroll payroll) { this.payrollHistory.add(payroll); }
 }
