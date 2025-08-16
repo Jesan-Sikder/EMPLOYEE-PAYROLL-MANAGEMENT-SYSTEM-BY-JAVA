@@ -23,7 +23,7 @@ public class PayrollHistoryPanel extends JPanel {
         gbc.gridx = 0; gbc.gridy = 0; gbc.weightx = 1; gbc.weighty = 1;
         gbc.fill = GridBagConstraints.BOTH;
 
-        // Dark accent color for harmony
+    
         Color accent = new Color(60, 72, 88);
 
         JPanel card = new RoundedPanel(18, new Color(255,255,255), accent, 2, true);
@@ -47,11 +47,11 @@ public class PayrollHistoryPanel extends JPanel {
 
         JTableHeader header = table.getTableHeader();
         header.setFont(new Font("Segoe UI", Font.BOLD, 16));
-        header.setBackground(new Color(220, 223, 228)); // muted like login/welcome
+        header.setBackground(new Color(220, 223, 228)); 
         header.setForeground(accent);
         header.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, accent));
 
-        // Set preferred column widths
+
         int[] colWidths = {90, 170, 110, 110, 90, 90, 90, 110, 120};
         for (int i = 0; i < colWidths.length; i++) {
             table.getColumnModel().getColumn(i).setPreferredWidth(colWidths[i]);
@@ -77,7 +77,7 @@ public class PayrollHistoryPanel extends JPanel {
         add(card, gbc);
     }
 
-    // Load latest payroll records for all employees
+ 
     public void loadLatestPayrolls(Collection<Employee> employees) {
         tableModel.setRowCount(0);
         for (Employee emp : employees) {
@@ -98,7 +98,7 @@ public class PayrollHistoryPanel extends JPanel {
         }
     }
 
-    // Optional: Load all payrolls for all employees (history view)
+
     public void loadAllPayrolls(Collection<Employee> employees) {
         tableModel.setRowCount(0);
         for (Employee emp : employees) {
@@ -118,7 +118,7 @@ public class PayrollHistoryPanel extends JPanel {
         }
     }
 
-    // Load payroll history for a single employee (show ID and Name!)
+
     public void loadPayrollHistory(List<Payroll> payrolls, String empId, String name) {
         tableModel.setRowCount(0); // clear table
         for (Payroll p : payrolls) {
@@ -136,7 +136,7 @@ public class PayrollHistoryPanel extends JPanel {
         }
     }
 
-    // RoundedPanel code (uses dark accent for drop shadow)
+  
     static class RoundedPanel extends JPanel {
         private final int radius;
         private final Color bgColor;

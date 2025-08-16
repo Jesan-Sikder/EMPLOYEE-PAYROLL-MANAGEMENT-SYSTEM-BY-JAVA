@@ -9,9 +9,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import model.Employee;
 
-/**
- * Modern Card UI for Employee Management (with dark accent).
- */
+
 public class EmployeeManagementPanel extends JPanel {
     public JTable table;
     public DefaultTableModel tableModel;
@@ -19,13 +17,12 @@ public class EmployeeManagementPanel extends JPanel {
 
     public EmployeeManagementPanel(ActionListener listener) {
         setLayout(new GridBagLayout());
-        setBackground(new Color(236, 239, 244)); // Modern soft background
+        setBackground(new Color(236, 239, 244)); 
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0; gbc.gridy = 0; gbc.weightx = 1; gbc.weighty = 1;
         gbc.fill = GridBagConstraints.BOTH;
 
-        // Use dark accent color (matches login)
         Color accent = new Color(60, 72, 88);
 
         JPanel card = new RoundedPanel(24, new Color(255, 255, 255), accent, 2, true);
@@ -37,7 +34,6 @@ public class EmployeeManagementPanel extends JPanel {
         lbl.setForeground(accent);
         card.add(lbl, BorderLayout.NORTH);
 
-        // Table model & table
         String[] columnNames = {"ID", "Name", "Position", "Salary", "PF %", "Tax %", "Bonus", "Overtime", "Email"};
         tableModel = new DefaultTableModel(columnNames, 0) {
             @Override
@@ -49,12 +45,11 @@ public class EmployeeManagementPanel extends JPanel {
 
         JTableHeader header = table.getTableHeader();
         header.setFont(new Font("Segoe UI", Font.BOLD, 16));
-        header.setBackground(new Color(220, 223, 228)); // muted background to match login
+        header.setBackground(new Color(220, 223, 228)); 
         header.setForeground(accent);
         header.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, accent));
 
-        // Set preferred column widths, especially for Email
-        int[] colWidths = {80, 170, 120, 110, 80, 80, 95, 80, 320}; // Wider email
+        int[] colWidths = {80, 170, 120, 110, 80, 80, 95, 80, 320}; 
         for (int i = 0; i < table.getColumnCount(); i++) {
             table.getColumnModel().getColumn(i).setPreferredWidth(colWidths[i]);
         }
@@ -64,7 +59,6 @@ public class EmployeeManagementPanel extends JPanel {
         scroll.setBorder(BorderFactory.createLineBorder(new Color(210, 210, 210), 1, true));
         card.add(scroll, BorderLayout.CENTER);
 
-        // Button panel (accent for add/edit, muted for back)
         btnAdd = createButton("Add Employee", listener, accent);
         btnEdit = createButton("Edit Employee", listener, accent);
         btnBack = createButton("Back", listener, new Color(186, 191, 208));
@@ -125,7 +119,7 @@ public class EmployeeManagementPanel extends JPanel {
         return btn;
     }
 
-    // Rounded panel with drop shadow
+  
     static class RoundedPanel extends JPanel {
         private final int radius;
         private final Color bgColor;
@@ -148,7 +142,7 @@ public class EmployeeManagementPanel extends JPanel {
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             int w = getWidth(), h = getHeight();
             if (shadow) {
-                g2.setColor(new Color(60, 72, 88, 40)); // subtle dark shadow
+                g2.setColor(new Color(60, 72, 88, 40)); 
                 g2.fillRoundRect(8, 8, w - 16, h - 16, radius, radius);
             }
             g2.setColor(bgColor);

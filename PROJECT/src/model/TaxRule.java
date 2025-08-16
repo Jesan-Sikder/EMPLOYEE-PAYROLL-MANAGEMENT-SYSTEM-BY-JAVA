@@ -1,8 +1,6 @@
 package model;
 
-/**
- * TaxRule class for dynamic tax, PF, bonus, and overtime parameters.
- */
+
 public class TaxRule {
     private double defaultPfPercent;
     private double defaultTaxPercent;
@@ -16,7 +14,6 @@ public class TaxRule {
         this.overtimeRatePerHour = overtimeRatePerHour;
     }
 
-    // Getters and setters
     public double getDefaultPfPercent() { return defaultPfPercent; }
     public void setDefaultPfPercent(double defaultPfPercent) { this.defaultPfPercent = defaultPfPercent; }
 

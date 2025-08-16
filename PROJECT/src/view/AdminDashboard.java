@@ -18,7 +18,7 @@ public class AdminDashboard extends JPanel {
         card.setBorder(BorderFactory.createEmptyBorder(50, 80, 50, 80));
         card.setPreferredSize(new Dimension(1100, 520)); // Wider panel
 
-        // Big title
+    
         lblTitle = new JLabel("ADMIN", JLabel.CENTER);
         lblTitle.setFont(new Font("Segoe UI", Font.BOLD, 70));
         lblTitle.setForeground(new Color(60, 72, 88));
@@ -26,7 +26,7 @@ public class AdminDashboard extends JPanel {
         lblTitle.setBorder(BorderFactory.createEmptyBorder(0, 0, 18, 0));
         card.add(lblTitle);
 
-        // Subheading
+    
         JLabel subHeading = new JLabel("Admin Dashboard", JLabel.CENTER);
         subHeading.setFont(new Font("Segoe UI", Font.BOLD, 30));
         subHeading.setForeground(new Color(60, 72, 88));
@@ -35,7 +35,6 @@ public class AdminDashboard extends JPanel {
 
         card.add(Box.createVerticalStrut(36));
 
-        // Button grid (2 rows, 3 columns) with more horizontal gap
         JPanel grid = new JPanel(new GridLayout(2, 3, 48, 22));
         grid.setOpaque(false);
 
@@ -57,7 +56,6 @@ public class AdminDashboard extends JPanel {
 
         card.add(Box.createVerticalStrut(32));
 
-        // Optional tip/info at the bottom
         lblTip = new JLabel("Tip: Regularly review payroll and tax rules for accuracy.", JLabel.CENTER);
         lblTip.setFont(new Font("Segoe UI", Font.ITALIC, 17));
         lblTip.setForeground(new Color(140, 148, 160));
@@ -97,7 +95,6 @@ public class AdminDashboard extends JPanel {
         return btn;
     }
 
-    // Rounded panel for card effect (same as employee dashboard)
     static class RoundedPanel extends JPanel {
         private final int radius;
         private final Color bgColor;

@@ -5,9 +5,6 @@ import java.util.Map;
 import model.Employee;
 import model.Payroll;
 
-/**
- * Generates payroll and tax reports.
- */
 public class ReportGenerator {
     public static String generatePayrollReport(Map<String, Employee> employees) {
         StringBuilder sb = new StringBuilder();
@@ -40,7 +37,7 @@ public class ReportGenerator {
         return sb.toString();
     }
 
-    // --- NEW: Table data for Payroll Report ---
+ 
     public static Object[][] generatePayrollTable(Map<String, Employee> employees) {
         Object[][] data = new Object[employees.size()][5]; // Adjust column count if needed
         int i = 0;

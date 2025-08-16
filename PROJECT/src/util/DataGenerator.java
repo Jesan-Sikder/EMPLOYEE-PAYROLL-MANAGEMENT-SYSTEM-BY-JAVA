@@ -1,15 +1,9 @@
 package util;
 
+import java.util.HashMap;
+import java.util.Random;
 import model.Employee;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
-
-/**
- * Utility class to generate random employee data for testing.
- */
 public class DataGenerator {
     private static final String[] POSITIONS = {"Developer", "Manager", "HR", "Analyst", "QA", "Support"};
     private static final String[] FIRST_NAMES = {"John", "Jane", "Alex", "Emily", "Chris", "Sophia", "Sam", "Olivia", "Max", "Ava"};

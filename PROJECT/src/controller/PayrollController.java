@@ -7,9 +7,7 @@ import util.EmailService;
 
 import java.util.Map;
 
-/**
- * Handles payroll processing and history.
- */
+
 public class PayrollController {
     private PayrollProcessor payrollProcessor;
     private Map<String, Employee> employees;

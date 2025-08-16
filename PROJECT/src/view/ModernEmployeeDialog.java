@@ -1,8 +1,8 @@
 package view;
 
-import model.Employee;
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
+import model.Employee;
 
 public class ModernEmployeeDialog extends JDialog {
     private JTextField idField, pwdField, nameField, emailField, positionField,
@@ -41,7 +41,7 @@ public class ModernEmployeeDialog extends JDialog {
 
         card.add(fields, BorderLayout.CENTER);
 
-        // Buttons
+        
         JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 24, 0));
         btnPanel.setOpaque(false);
 
@@ -115,7 +115,6 @@ public class ModernEmployeeDialog extends JDialog {
         return btn;
     }
 
-    // Rounded panel with drop shadow
     static class RoundedPanel extends JPanel {
         private final int radius;
         private final Color bgColor;

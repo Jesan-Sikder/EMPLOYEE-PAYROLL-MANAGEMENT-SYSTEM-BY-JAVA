@@ -4,9 +4,6 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Employee class that extends User and holds payroll information.
- */
 public class Employee extends User {
     private String position;
     private double baseSalary;
@@ -16,7 +13,6 @@ public class Employee extends User {
     private int overtimeHours;
     private List<Payroll> payrollHistory;
 
-    // Default constructor for Gson and JavaBeans
     public Employee() {
         super();
         this.payrollHistory = new ArrayList<>();
@@ -35,7 +31,6 @@ public class Employee extends User {
         this.payrollHistory = new ArrayList<>();
     }
 
-    // Getters and setters
     public String getPosition() { return position; }
     public void setPosition(String position) { this.position = position; }
 

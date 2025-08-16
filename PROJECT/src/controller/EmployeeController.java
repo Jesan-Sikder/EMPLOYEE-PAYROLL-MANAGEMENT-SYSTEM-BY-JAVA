@@ -42,7 +42,7 @@ public class EmployeeController {
             emp.setPfPercent(pfPercent);
             emp.setTaxPercent(taxPercent);
             emp.setBonus(bonus);
-            // emp.setOvertimeHours(overtimeCount);
+
                emp.setOvertimeHours(overtimeHours);
             saveAllEmployeesToFile("employees.json");
             return true;
@@ -53,7 +53,7 @@ public class EmployeeController {
         return this.employees;
     }
 
-    // New method to save all employees to JSON
+   
     public void saveAllEmployeesToFile(String filename) {
         try {
             List<Employee> employeeList = new ArrayList<>(employees.values());

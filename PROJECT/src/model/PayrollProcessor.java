@@ -2,9 +2,7 @@ package model;
 
 import java.time.LocalDate;
 
-/**
- * PayrollProcessor handles payroll calculation logic.
- */
+
 public class PayrollProcessor {
 
     private TaxRule taxRule;
@@ -13,11 +11,7 @@ public class PayrollProcessor {
         this.taxRule = taxRule;
     }
 
-    /**
-     * Process payroll for an employee for the current month.
-     * @param employee Employee to process payroll for
-     * @return Payroll record
-     */
+    
     public Payroll processPayroll(Employee employee) {
         double baseSalary = employee.getBaseSalary();
         double pfDeduction = baseSalary * employee.getPfPercent() / 100.0;

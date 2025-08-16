@@ -7,9 +7,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
-/**
- * Responsive report panel for payroll/tax reports.
- */
+
 public class ReportPanel extends JPanel {
     public JTable table;
     public DefaultTableModel tableModel;
@@ -17,11 +15,11 @@ public class ReportPanel extends JPanel {
 
     public ReportPanel(String reportTitle, Object[][] rowData, String[] columnNames, ActionListener backListener) {
         setLayout(new GridBagLayout());
-        setBackground(new Color(220, 223, 228)); // Ash background
+        setBackground(new Color(220, 223, 228)); 
 
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0; gbc.gridy = 0; gbc.weightx = 1; gbc.weighty = 1;
-        gbc.fill = GridBagConstraints.BOTH; // Let card panel grow and stay centered
+        gbc.fill = GridBagConstraints.BOTH;
 
         JPanel card = new RoundedPanel(22, new Color(255, 255, 255), new Color(60, 72, 88), 2);
         card.setLayout(new BorderLayout(0, 12));
@@ -32,7 +30,7 @@ public class ReportPanel extends JPanel {
         lbl.setForeground(new Color(60, 72, 88));
         card.add(lbl, BorderLayout.NORTH);
 
-        // Table model and table
+      
         tableModel = new DefaultTableModel(rowData, columnNames) {
             @Override
             public boolean isCellEditable(int row, int column) { return false; }
@@ -40,13 +38,12 @@ public class ReportPanel extends JPanel {
         table = new JTable(tableModel);
         table.setFont(new Font("Segoe UI", Font.PLAIN, 15));
         table.setRowHeight(28);
-        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF); // Prevent columns from squeezing
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF); 
         JTableHeader header = table.getTableHeader();
         header.setFont(new Font("Segoe UI", Font.BOLD, 16));
         header.setBackground(new Color(245, 248, 252));
         header.setForeground(new Color(60, 72, 88));
 
-        // Set preferred column widths for common payroll columns
         int[] colWidths = {80, 180, 130, 110, 110};
         for (int i = 0; i < table.getColumnCount(); i++) {
             table.getColumnModel().getColumn(i).setPreferredWidth(i < colWidths.length ? colWidths[i] : 120);
@@ -67,7 +64,6 @@ public class ReportPanel extends JPanel {
 
         add(card, gbc);
 
-        // Make the card panel grow with window
         card.setMinimumSize(new Dimension(500, 300));
         card.setPreferredSize(new Dimension(900, 500));
     }
@@ -100,7 +96,6 @@ public class ReportPanel extends JPanel {
         return btn;
     }
 
-    // Rounded panel for card effect
     static class RoundedPanel extends JPanel {
         private final int radius;
         private final Color bgColor;

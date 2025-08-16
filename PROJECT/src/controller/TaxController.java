@@ -2,9 +2,6 @@ package controller;
 
 import model.TaxRule;
 
-/**
- * Handles tax rule configuration.
- */
 public class TaxController {
     private TaxRule taxRule;
 

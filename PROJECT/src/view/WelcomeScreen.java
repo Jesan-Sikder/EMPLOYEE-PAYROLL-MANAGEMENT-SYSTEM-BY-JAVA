@@ -5,11 +5,7 @@ import java.awt.event.ActionListener;
 import java.net.URL;
 import javax.swing.*;
 
-/**
- * Welcome screen with visible black text in buttons,
- * card at top, and centered Creator button below.
- * Now supports multiple creators in pyramid (1-2-2) layout.
- */
+
 public class WelcomeScreen extends JPanel {
     public WelcomeScreen(ActionListener adminListener, ActionListener employeeListener) {
         setLayout(new GridBagLayout());
@@ -19,7 +15,6 @@ public class WelcomeScreen extends JPanel {
         gbc.gridx = 0; gbc.gridy = 0; gbc.weightx = 1; gbc.weighty = 0;
         gbc.anchor = GridBagConstraints.NORTH;
 
-        // Card Panel with outline
         JPanel card = new RoundedPanel(25, new Color(255, 255, 255), new Color(60, 72, 88), 2);
         card.setLayout(new BoxLayout(card, BoxLayout.Y_AXIS));
         card.setBorder(BorderFactory.createEmptyBorder(30, 40, 30, 40));
@@ -32,7 +27,6 @@ public class WelcomeScreen extends JPanel {
         card.add(label);
         card.add(Box.createVerticalStrut(30));
 
-        // Buttons with custom rendering
         JButton btnAdmin = new RoundedTextButton("Admin");
         btnAdmin.setFont(new Font("Segoe UI", Font.PLAIN, 16));
         btnAdmin.addActionListener(adminListener);
@@ -48,13 +42,11 @@ public class WelcomeScreen extends JPanel {
         btnPanel.add(btnEmployee);
         card.add(btnPanel);
 
-        // Creator button
         JButton btnCreator = new RoundedTextButton("Creators");
         btnCreator.setFont(new Font("Segoe UI", Font.BOLD, 16));
         btnCreator.setAlignmentX(Component.CENTER_ALIGNMENT);
         btnCreator.addActionListener(e -> showCreatorsDialog(btnCreator));
 
-        // Vertical layout for card + creator button
         JPanel contentPanel = new JPanel();
         contentPanel.setOpaque(false);
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
@@ -66,11 +58,9 @@ public class WelcomeScreen extends JPanel {
         add(contentPanel, gbc);
     }
 
-    /**
-     * Opens a dialog showing all creators' information in a pyramid layout (1-2-2).
-     */
+
     private void showCreatorsDialog(Component parent) {
-        // Define creators' details: name, email, github, imagePath, created
+
         CreatorInfo[] creators = new CreatorInfo[] {
             new CreatorInfo(
                 "MD. Habibur Rahman Jesan",
@@ -121,7 +111,6 @@ public class WelcomeScreen extends JPanel {
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(20, 30, 20, 30));
 
-        // 1st row: 1 creator (center)
         JPanel row1 = new JPanel();
         row1.setOpaque(false);
         row1.setLayout(new BoxLayout(row1, BoxLayout.X_AXIS));
@@ -131,7 +120,6 @@ public class WelcomeScreen extends JPanel {
         mainPanel.add(row1);
         mainPanel.add(Box.createVerticalStrut(30));
 
-        // 2nd row: 2 creators
         JPanel row2 = new JPanel();
         row2.setOpaque(false);
         row2.setLayout(new BoxLayout(row2, BoxLayout.X_AXIS));
@@ -143,7 +131,6 @@ public class WelcomeScreen extends JPanel {
         mainPanel.add(row2);
         mainPanel.add(Box.createVerticalStrut(30));
 
-        // 3rd row: 2 creators
         JPanel row3 = new JPanel();
         row3.setOpaque(false);
         row3.setLayout(new BoxLayout(row3, BoxLayout.X_AXIS));
@@ -154,7 +141,6 @@ public class WelcomeScreen extends JPanel {
         row3.add(Box.createHorizontalGlue());
         mainPanel.add(row3);
 
-        // OK button at bottom
         mainPanel.add(Box.createVerticalStrut(25));
         JButton okBtn = new JButton("OK");
         okBtn.setFont(new Font("Segoe UI", Font.BOLD, 15));
@@ -173,16 +159,13 @@ public class WelcomeScreen extends JPanel {
         dialog.setVisible(true);
     }
 
-    /**
-     * Create a panel for a single creator.
-     */
+
     private JPanel getCreatorPanel(CreatorInfo creator) {
         JPanel panel = new JPanel();
         panel.setOpaque(false);
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        panel.setMaximumSize(new Dimension(200, 210)); // Max width for uniformity
+        panel.setMaximumSize(new Dimension(200, 210)); 
 
-        // LOAD PHOTO (with null check)
         JLabel picLabel;
         URL imgUrl = getClass().getResource(creator.imagePath);
         if (imgUrl != null) {
@@ -235,9 +218,7 @@ public class WelcomeScreen extends JPanel {
         return panel;
     }
 
-    /**
-     * Structure to hold creator details.
-     */
+ 
     static class CreatorInfo {
         String name, email, github, imagePath, created;
         CreatorInfo(String name, String email, String github, String imagePath, String created) {
@@ -249,7 +230,7 @@ public class WelcomeScreen extends JPanel {
         }
     }
 
-    // Custom button with round border and visible black text
+
     static class RoundedTextButton extends JButton {
         public RoundedTextButton(String text) {
             super(text);
@@ -266,14 +247,14 @@ public class WelcomeScreen extends JPanel {
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             int arc = 18;
             int bw = 2;
-            // Draw background
+           
             g2.setColor(new Color(245, 248, 252));
             g2.fillRoundRect(0, 0, getWidth(), getHeight(), arc, arc);
-            // Draw border
+          
             g2.setColor(new Color(60, 72, 88));
             g2.setStroke(new BasicStroke(bw));
             g2.drawRoundRect(bw / 2, bw / 2, getWidth() - bw, getHeight() - bw, arc, arc);
-            // Draw text
+        
             g2.setFont(getFont());
             FontMetrics fm = g2.getFontMetrics();
             String text = getText();
@@ -281,13 +262,12 @@ public class WelcomeScreen extends JPanel {
             int textHeight = fm.getAscent();
             int x = (getWidth() - textWidth) / 2;
             int y = (getHeight() + textHeight) / 2 - 4;
-            g2.setColor(Color.BLACK); // Always black text!
+            g2.setColor(Color.BLACK); 
             g2.drawString(text, x, y);
             g2.dispose();
         }
     }
 
-    // Custom rounded panel for card effect with border
     static class RoundedPanel extends JPanel {
         private final int radius;
         private final Color bgColor;

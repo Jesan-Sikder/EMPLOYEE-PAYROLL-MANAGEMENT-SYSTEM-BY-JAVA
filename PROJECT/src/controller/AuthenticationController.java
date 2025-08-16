@@ -4,9 +4,7 @@ import model.Admin;
 import model.Employee;
 import java.util.Map;
 
-/**
- * Handles authentication for Admin and Employees.
- */
+
 public class AuthenticationController {
     private Admin admin;
     private Map<String, Employee> employees;

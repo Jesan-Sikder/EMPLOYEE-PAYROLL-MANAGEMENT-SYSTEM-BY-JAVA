@@ -1,13 +1,10 @@
 
 package view;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 
-/**
- * Modern login panel for Admin or Employee.
- */
 public class LoginPanel extends JPanel {
     private JTextField txtId;
     private JPasswordField txtPassword;
@@ -80,7 +77,6 @@ public class LoginPanel extends JPanel {
         JOptionPane.showMessageDialog(this, msg, "Login Error", JOptionPane.ERROR_MESSAGE);
     }
 
-    // Rounded panel for the card effect
     static class RoundedPanel extends JPanel {
         private final int radius;
         private final Color bgColor;
@@ -109,7 +105,6 @@ public class LoginPanel extends JPanel {
         }
     }
 
-    // Rounded button
     static class RoundedTextButton extends JButton {
         public RoundedTextButton(String text) {
             super(text);

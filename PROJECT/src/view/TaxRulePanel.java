@@ -1,20 +1,18 @@
 
 package view;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 
-/**
- * Modern panel for admin to update global tax rules.
- */
+
 public class TaxRulePanel extends JPanel {
     public JTextField txtPf, txtTax, txtBonus, txtOvertime;
     public JButton btnSave, btnBack;
 
     public TaxRulePanel(ActionListener saveListener, ActionListener backListener) {
         setLayout(new GridBagLayout());
-        setBackground(new Color(220, 223, 228)); // Ash background
+        setBackground(new Color(220, 223, 228)); 
 
         JPanel card = new RoundedPanel(22, new Color(255, 255, 255), new Color(60, 72, 88), 2);
         card.setLayout(new BoxLayout(card, BoxLayout.Y_AXIS));
@@ -122,7 +120,6 @@ public class TaxRulePanel extends JPanel {
         return btn;
     }
 
-    // For loading current settings
     public void loadValues(double pf, double tax, double bonus, double overtime) {
         txtPf.setText(String.format("%.2f", pf));
         txtTax.setText(String.format("%.2f", tax));
@@ -135,7 +132,6 @@ public class TaxRulePanel extends JPanel {
     public double getBonus() { return Double.parseDouble(txtBonus.getText().trim()); }
     public double getOvertime() { return Double.parseDouble(txtOvertime.getText().trim()); }
 
-    // Rounded panel for card effect
     static class RoundedPanel extends JPanel {
         private final int radius;
         private final Color bgColor;
