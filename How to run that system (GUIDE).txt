@@ -1,0 +1,11 @@
+How to run that system :
+
+Step -1 : First open the "PROJECT" folder than open the terminal there , than follow Step - 2 
+Step -2 : paste that below commands in terminal -
+
+javac -cp "src/lib/gson-2.10.1.jar" -d bin src/model/*.java src/util/*.java src/controller/*.java src/view/*.java src/Main.java
+java -cp "bin;src/lib/gson-2.10.1.jar" Main
+
+and boom the system will run as expected.
+Hope you enjoy it .
+
