@@ -1,0 +1,55 @@
+Employee Payroll Management System:
+
+|_bin(same folder as src folder had and these files are .class files)
+|_employees(JSON source file) 
+|_src
+  |_controller
+             |_AuthenticationController
+             |_EmployeeController
+             |_PayrollController
+             |_TaxController
+
+  |_model
+         |_Admin
+         |_Employee
+         |_Payroll
+         |_PayrollProcessor
+         |_TaxRule
+         |_User
+	
+		
+  |_util
+       |_DataGenerator
+       |_EmailService
+       |_ReportGenerator
+       |_EmployeeFileUtil
+       |_LocalDateAdapter
+      
+
+  |_view
+        |_AdminDashboard
+        |_EmployeeDashboard
+        |_EmployeeManagementPanel
+        |_LoginPanel
+        |_ModernEmployeeDialog
+        |_PayrollHistoryPanel
+        |_ReportPanel
+        |_TaxRulePanel
+        |_WelcomeScreen
+        |_jesan(jpg)
+  |_lib
+       |_gson-2.10.1(jar)
+   
+|_Main
+
+How to run that system :
+
+Step -1 : First open the "PROJECT" folder than open the terminal there , than follow Step - 2 
+Step -2 : paste that below commands in terminal -
+
+javac -cp "src/lib/gson-2.10.1.jar" -d bin src/model/*.java src/util/*.java src/controller/*.java src/view/*.java src/Main.java
+java -cp "bin;src/lib/gson-2.10.1.jar" Main
+
+and boom the system runs like sexy wine.
+Hope you enjoy it .
+
