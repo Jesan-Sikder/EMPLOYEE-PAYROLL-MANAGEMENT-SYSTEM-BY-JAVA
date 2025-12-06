@@ -67,35 +67,35 @@ public class WelcomeScreen extends JPanel {
                 "rahman241-15-628@diu.edu.bd",
                 "https://github.com/Jesan-Sikder",
                 "/view/jesan.JPG",
-                "July 2025"
+                "December 2025"
             ),
             new CreatorInfo(
                 "Reshad Bin Alam",
                 "bin241-15-191@diu.edu.bd",
                 "https://github.com/Reshad-Bin-Alam",
                 "/view/reshad.JPG",
-                "July 2025"
+                "December 2025"
             ),
             new CreatorInfo(
-                "Faisal Bin Nasir",
-                "bin241-15-596@diu.edu.bd",
-                "https://github.com/Faisal-Bin-Nasir",
-                "/view/faisal.JPG",
-                "July 2025"
+                "Md. Touhidul Islam Raha",
+                "islam241-15-708@diu.edu.bd",
+                "https://github.com/raha-66",
+                "/view/raha.JPG",
+                "December 2025"
             ),
             new CreatorInfo(
-                "Jakaria Hosen",
-                "jakaria241-15-440@diu.edu.bd",
-                "https://github.com/Jakaria-Hosen",
-                "/view/jakaria.JPG",
-                "July 2025"
+                "Sheikh Moumoni Ahmed",
+                "moumoni241-15-707@diu.edu.bd",
+                "https://github.com/Moumoni",
+                "/view/momo.JPG",
+                "December 2025"
             ),
             new CreatorInfo(
-                "Sahazuma Shikder Shuci",
-                "shikder241-15-656@diu.edu.bd",
-                "https://github.com/Sahazuma-Shikder-Shuci",
-                "/view/suci.JPG",
-                "July 2025"
+                "MD Rihan Munshi",
+                "rihan241-15-692@diu.edu.bd",
+                "https://github.com/rihanhub",
+                "/view/rahin.JPG",
+                "December 2025"
             )
         };
 
