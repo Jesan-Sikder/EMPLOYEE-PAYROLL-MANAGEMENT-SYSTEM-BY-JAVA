@@ -1,4 +1,4 @@
-# Project Structure: Employee Payroll Management System
+# Employee Payroll Management System
 
 The project employs an MVC (Model-View-Controller) architecture for maintainability, scalability, and separation of concerns. The overall directory structure is as follows:
 
